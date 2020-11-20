@@ -15,13 +15,9 @@ public final class Logic {
     public void move(Cell source, Cell dest)
             throws FigureNotFoundException, ImpossibleMoveException, OccupiedCellException {
         int index = findBy(source);
-        try {
-            Cell[] steps = figures[index].way(dest);
-            free(steps);
-            figures[index] = figures[index].copy(dest);
-        } catch (IllegalStateException ise) {
-            throw new ImpossibleMoveException();
-        }
+        Cell[] steps = figures[index].way(dest);
+        free(steps);
+        figures[index] = figures[index].copy(dest);
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {

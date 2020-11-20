@@ -1,6 +1,7 @@
 package ru.job4j.chess.firuges.black;
 
 import org.junit.Test;
+import ru.job4j.chess.ImpossibleMoveException;
 import ru.job4j.chess.firuges.Cell;
 
 import static org.junit.Assert.*;
@@ -20,7 +21,7 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void whenWayC1G5() {
+    public void whenWayC1G5() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         Cell[] cells = bishopBlack.way(Cell.G5);
         Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
@@ -28,7 +29,7 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void whenWayD4H8() {
+    public void whenWayD4H8() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.D4);
         Cell[] cells = bishopBlack.way(Cell.H8);
         Cell[] expected = {Cell.E5, Cell.F6, Cell.G7, Cell.H8};
@@ -36,7 +37,7 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void whenWayD4A1() {
+    public void whenWayD4A1() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.D4);
         Cell[] cells = bishopBlack.way(Cell.A1);
         Cell[] expected = {Cell.C3, Cell.B2, Cell.A1};
@@ -44,7 +45,7 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void whenWayD4G1() {
+    public void whenWayD4G1() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.D4);
         Cell[] cells = bishopBlack.way(Cell.G1);
         Cell[] expected = {Cell.E3, Cell.F2, Cell.G1};
@@ -52,7 +53,7 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void whenWayD4A7() {
+    public void whenWayD4A7() throws ImpossibleMoveException {
         BishopBlack bishopBlack = new BishopBlack(Cell.D4);
         Cell[] cells = bishopBlack.way(Cell.A7);
         Cell[] expected = {Cell.C5, Cell.B6, Cell.A7};
